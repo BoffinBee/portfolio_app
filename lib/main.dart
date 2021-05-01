@@ -9,12 +9,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //debugShowCheckedModeBanner: false,
-      title: 'Portfolio App',
+      debugShowCheckedModeBanner: false,
+      //title: 'Portfolio App',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: PortfolioScreen(),
+      home: SafeArea(
+        minimum: EdgeInsets.zero,
+        child: PortfolioScreen(),
+      ),
     );
   }
 }
@@ -28,7 +31,7 @@ class PortfolioScreen extends StatelessWidget {
           title: Text(
             'Portfolio App',
           ),
-          backgroundColor: Colors.indigo,
+          backgroundColor: Colors.green,
           elevation: 2,
         ),
         body: _buildContent(),
